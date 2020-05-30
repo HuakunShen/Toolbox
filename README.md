@@ -25,3 +25,7 @@ Supported video type: `mp4`
 - Contains `PS1`/`Command Prompt` setting
 - Contains optional sample alias app for Linux subsystem under Win10
 
+[`crontab template`](./setting/crontab.sh):
+- crontab is for periodic tasks
+- Contains contab template
+
