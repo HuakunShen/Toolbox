@@ -10,7 +10,7 @@ PROMPT="%F{082}%n%f%F{045}[%~]%f${vcs_info_msg_0_}${NEWLINE}> "
 
 # helper functions
 # mkdir and cd
-mcd() {
+function mcd {
     if [ $# -eq 0 ]
     then
         echo 'Missing Argument (directory), Usage: mcd dirname'
@@ -27,7 +27,7 @@ mcd() {
 alias mcd='mcd'
 
 # search in all files in dir
-search() {
+function search {
     # $1 is search content
     # $2 is target directory
     if [ $# -eq 0 ]
