@@ -12,7 +12,7 @@ Supported video type: `mp4`
 
 ## Settings
 
-[`.zshrc`](./setting/zshrc):
+[`.zshrc`](./setting/zshrc.sh):
 
 `zshrc` is for `zsh`, for Mac. 
 
@@ -20,7 +20,7 @@ Supported video type: `mp4`
 - Helper function `mcd`, `cd` into a dir, `mkdir` if not exist
 - Helper function `search`, run `grep -Rn <search-content> <target-dir>`, "target-dir" is optional, search cwd by default
 
-[`.bashrc`](./setting/bashrc):
+[`.bashrc`](./setting/bashrc.sh):
 
 - Contains `PS1`/`Command Prompt` setting
 - Contains optional sample alias app for Linux subsystem under Win10
