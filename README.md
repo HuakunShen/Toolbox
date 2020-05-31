@@ -14,7 +14,7 @@ Supported video type: `mp4`
 
 [`.zshrc`](./setting/zshrc.sh):
 
-`zshrc` is for `zsh`, for Mac. 
+`.zshrc` is for `zsh`, for Mac. 
 
 - Contains `PROMPT` settings
 - Helper function `mcd`, `cd` into a dir, `mkdir` if not exist
@@ -24,4 +24,8 @@ Supported video type: `mp4`
 
 - Contains `PS1`/`Command Prompt` setting
 - Contains optional sample alias app for Linux subsystem under Win10
+
+[`crontab template`](./setting/crontab.sh):
+- crontab is for periodic tasks
+- Contains contab template
 
