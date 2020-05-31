@@ -1,17 +1,67 @@
 # !/bin/bash
-if [ $# -eq 0 ]
+videoTypes=()
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+
+    case $key in
+        --dir)
+            videoDir="$2"
+            shift # past argument
+            shift # past value
+        ;;
+        -d)
+            default=true
+            shift # past argument
+        ;;
+        -q)
+            quiet=true
+            shift
+        ;;
+        *)    # the rest options: video types 
+            videoTypes+=("$1") # save it in an array for later
+            shift # past argument
+        ;;
+    esac
+done
+# check if videoDir is empty
+if [ -z $videoDir ]
 then
-    echo 'missing directory argument ($1)'
+    echo 'missing directory argument, usage: --dir <dir>'
     exit
 fi
-videoDir=$1
-allLen=$(find $videoDir -iname '*.mp4' -exec ffprobe -v quiet -of csv=p=0 -show_entries format=duration {} \;)
-sum=0
-for duration in $allLen
+set -- "${videoTypes[@]}" # restore positional parameters
+# set default video types
+if [ ! -z $default ] || [ ${#videoTypes[@]} -eq 0 ]
+then
+    videoTypes=("mp4" "mov" "AVI")
+fi
+# set "find" search string
+findVideoTypePattern=""
+i=0
+for type in ${videoTypes[@]}
 do
-    sum=`echo $sum + $duration | bc`
+    findVideoTypePattern+=" -iname *.$type"
+    if [ $((i+1)) -ne ${#videoTypes[@]} ]
+    then
+        findVideoTypePattern+=' -o'
+    fi
+    ((i++))
 done
 
+searchCmd="find ${videoDir} ${findVideoTypePattern}"
+
+output=$(find $videoDir $findVideoTypePattern)
+sum=0
+for file in $output
+do
+    if [ -z $quiet ]
+    then
+        echo $file
+    fi
+    duration=$(ffprobe -v quiet -of csv=p=0 -show_entries format=duration $file)
+    sum=`echo $sum + $duration | bc`
+done
 echo $sum seconds
 sum=${sum%.*}
 if [ $sum -gt 60 ]
