@@ -44,4 +44,4 @@ function search {
 }
 alias search='search'
 
-alias printPATH="echo $PATH | tr ':' '\n'"
+alias PATH="echo $PATH | tr ':' '\n'"
