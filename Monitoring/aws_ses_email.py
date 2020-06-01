@@ -1,5 +1,6 @@
 import boto3
 from botocore.exceptions import ClientError
+# run aws configure first
 
 
 def send_email(sender: str, recipients: list, aws_region: str, subject: str, body_text: str, body_html: str, charset: str, cc=[], reply_to_addr=[]):

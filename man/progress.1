@@ -1,0 +1,27 @@
+.TH progress "May 2020" Linux "User Manuals"
+.SH NAME
+progress \- progress bar tool
+.SH SYNOPSIS
+.B progress [option]... [# jobs done][# total jobs]
+.SH DESCRIPTION
+.B progress 
+displays a progress bar with some custom configuration
+.SH OPTIONS
+.IP -d,--demo 
+Show a dynamic progress bar demo growing from 0% to 100%
+.IP -h,--help 
+Show help info
+.IP -b,--begin 
+Begin character of progress bar, default: '['
+.IP -e,--end 
+End character of progress bar, default: ']'
+.IP -c,--char 
+Characters made up progress bar, default: '#'
+.IP -l,--length 
+Length of progress bar, default: 50
+.SH AUTHOR
+Huakun Shen <shenhuakun@outlook.com>
+.SH "SEE ALSO"
+.BR bar (1),
+.BR foo (5),
+.BR xyzzy (1)

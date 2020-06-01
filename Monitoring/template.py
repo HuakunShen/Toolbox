@@ -5,6 +5,8 @@ import os
 import logging
 import datetime
 import argparse
+# run aws configure first
+
 
 # setup
 parser = argparse.ArgumentParser(description='Monitor template')
