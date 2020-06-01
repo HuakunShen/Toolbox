@@ -7,10 +7,10 @@ export PS1="\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;6
 
 # Only for WSL
 # win10 app shortcut
-alias typora="/mnt/c/Program\ Files/Typora/Typora.exe"
-alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
-alias sublime_text="/mnt/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
-alias atom="/mnt/c/Users/shenh/AppData/Local/atom/atom.exe"
+# alias typora="/mnt/c/Program\ Files/Typora/Typora.exe"
+# alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
+# alias sublime_text="/mnt/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
+# alias atom="/mnt/c/Users/shenh/AppData/Local/atom/atom.exe"
 
 # helper functions
 # mkdir and cd

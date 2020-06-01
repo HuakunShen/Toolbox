@@ -96,7 +96,7 @@ rm ./uninstall.progress.sh
 
 ## Settings
 
-[`.zshrc`](./setting/zshrc.sh):
+### [.zshrc](./setting/zshrc.sh):
 
 `.zshrc` is for `zsh`, for Mac.
 
@@ -104,10 +104,26 @@ rm ./uninstall.progress.sh
 - Helper function `mcd`, `cd` into a dir, `mkdir` if not exist
 - Helper function `search`, run `grep -Rn <search-content> <target-dir>`, "target-dir" is optional, search cwd by default
 
-[`.bashrc`](./setting/bashrc.sh):
+##### Installation
+
+```bash
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/setting/zshrc.sh
+cat zshrc.sh >> ~/.zshrc
+rm zshrc.sh
+```
+
+### [.bashrc](./setting/bashrc.sh):
 
 - Contains `PS1`/`Command Prompt` setting
 - Contains optional sample alias app for Linux subsystem under Win10
+
+##### Installation
+
+```bash
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/setting/bashrc.sh
+cat bashrc.sh >> ~/.bashrc
+rm bashrc.sh
+```
 
 [`crontab template`](./setting/crontab.sh):
 
