@@ -23,6 +23,10 @@ videoLen --dir <directory of videos> --quiet --default
 videoLen --dir <directory of videos> --quiet mp4 mov
 ```
 
+##### Demo
+
+<img src="README.assets/videoLen.gif" alt="videoLen" style="zoom:33%;" />
+
 ##### Installation
 
 [install.videoLen.sh](./installation/install.videoLen.sh)
@@ -68,9 +72,11 @@ progress <dir of videos> --begin G --end gle --char o --length 60
 
 ##### Demo
 
-![default-demo](README.assets/default-demo.gif)
+<img src="README.assets/default-demo.gif" alt="default-demo" style="zoom:33%;" />
 
-![google-demo](README.assets/google-demo.gif)
+<img src="README.assets/google-demo.gif" alt="google-demo" style="zoom:33%;" />
+
+<img src="README.assets/videoLen.gif" alt="videoLen" style="zoom:33%;" />
 
 ##### man
 
