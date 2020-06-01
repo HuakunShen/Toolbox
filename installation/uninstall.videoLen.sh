@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo rm /usr/bin/videoLen
+sudo rm /usr/local/bin/videoLen
