@@ -5,6 +5,7 @@ END=']'
 CHAR='#'
 LENGTH=50
 
+# main function for this program
 function prog {
     numHash=$(echo "scale=3; $1/100*$LENGTH" | bc)
     numHash="${numHash%.*}"
@@ -23,35 +24,51 @@ function prog {
 }
 # parse arguments
 arguments=()
-while [[ $# -gt 0 ]]
+while [ $# -gt 0 ]
 do
     key="$1"
     case $key in
-        --demo)
-            demo=true
-            shift
+        -d|--demo)
+            for i in `seq 1 100`
+            do
+                prog $i
+            done
+            echo -ne "\n"
+            exit
         ;;
-        --begin)
+        -h|--help)
+            echo "Usage:"
+            echo "progress [num job done] [total jobs] [optional arguments]..."
+            echo "-d, --demo Show a dynamic progress bar demo growing from 0% to 100%"
+            echo "-h, --help Show help info"
+            echo "-b, --begin Begin character of progress bar, default: '['"
+            echo "-e, --end End character of progress bar, default: ']'"
+            echo "-c,--char Characters made up progress bar, default: '#'"
+            echo "-l, --length Length of progress bar, default: 50"
+            exit
+        ;;
+        -b|--begin) # optional: begin with
             BEGIN="$2"
             shift # past argument
             shift # past value
         ;;
-        --end)
+        -e|--end)   # optional: end with
             END="$2"
             shift # past argument
             shift # past value
         ;;
-        --char)
+        -c|--char)  # optional: char of progress
             CHAR="$2"
             shift # past argument
             shift # past value
         ;;
-        --length)
+        -l|--length) # optional: length of progress bar in terms of chars
             LENGTH="$2"
             shift # past argument
             shift # past value
         ;;
-        *)    # the rest options: video types 
+        *)    
+            # the rest options: num of job done and total jobs, used to calculate progress
             arguments+=("$1") # save it in an array for later
             shift # past argument
         ;;
@@ -60,26 +77,15 @@ done
 
 set -- "${arguments[@]}" # restore positional parameters
 
-# demo
-if [ "$demo" == "true" ]
-then
-    for i in `seq 1 100`
-    do
-        prog $i
-    done
-    echo -ne "\n"
-    exit
-fi
-
-# first argument is done so far
-# second argument is total
-# third argument is progress bar length
+# first argument is job done so far
+# second argument is total job
 if [ $# -lt 2 ]
 then
-    echo "Missing Argument, Usage: progress <done> <total> <optional:progress_bar_length>"
+    echo "Missing Argument, Default (minimum) Usage: progress <done> <total>"
     exit
 fi
 
+# calculate length of progress bar (percentage), [0-100]
 prog_number=$(echo "scale=2; $1/$2*100" | bc)
 prog_number="${prog_number%.*}"
 

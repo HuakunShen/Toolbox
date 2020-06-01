@@ -10,13 +10,21 @@ do
             shift # past argument
             shift # past value
         ;;
-        -d)
+        -d|--default)
             default=true
             shift # past argument
         ;;
-        -q)
+        -q|--quiet)
             quiet=true
             shift
+        ;;
+        -h|--help)
+            echo "Usage:"
+            echo "videoLen --dir [target directory] [optional arguments]... []"
+            echo "options"
+            echo "--dir target directory"
+            echo "-d set default to true, use default video types: (mp4, avi, mov)"
+            echo "-q quiet, when specified, video filenames won't be printed"
         ;;
         *)    # the rest options: video types 
             videoTypes+=("$1") # save it in an array for later
