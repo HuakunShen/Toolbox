@@ -125,7 +125,8 @@ cat bashrc.sh >> ~/.bashrc
 rm bashrc.sh
 ```
 
-[`crontab template`](./setting/crontab.sh):
+[crontab template](./setting/crontab.sh):
 
 - crontab is for periodic tasks
 - Contains contab template
+- `crontab -e` to edit
