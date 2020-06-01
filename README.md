@@ -25,15 +25,25 @@ videoLen --dir <directory of videos> --quiet mp4 mov
 
 ##### Installation
 
-[install.videoLen.sh](../installation/install.videoLen.sh)
+[install.videoLen.sh](./installation/install.videoLen.sh)
+
+```bash
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.videoLen.sh
+chmod a+x install.videoLen.sh
+./install.videoLen.sh
+rm ./install.videoLen.sh
+```
 
 ##### Uninstallation
 
-[uninstall.videoLen.sh](../installation/uninstall.videoLen.sh)
+[uninstall.videoLen.sh](./installation/uninstall.videoLen.sh)
 
-
-
-
+```bash
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/uninstall.videoLen.sh
+chmod a+x uninstall.videoLen.sh
+./uninstall.videoLen.sh
+rm ./uninstall.videoLen.sh
+```
 
 #### [progress](./bin/progress):
 
@@ -66,9 +76,23 @@ progress <dir of videos> --begin G --end gle --char o --length 60
 
 [install.progress.sh](./installation/install.progress.sh)
 
+```bash
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.progress.sh
+chmod a+x install.progress.sh
+./install.progress.sh
+rm ./install.progress.sh
+```
+
 ##### Uninstallation
 
 [uninstall.progress.sh](./installation/uninstall.progress.sh)
+
+```bash
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/uninstall.progress.sh
+chmod a+x uninstall.progress.sh
+./uninstall.progress.sh
+rm ./uninstall.progress.sh
+```
 
 ## Settings
 
