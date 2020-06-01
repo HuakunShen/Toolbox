@@ -25,7 +25,7 @@ videoLen --dir <directory of videos> --quiet mp4 mov
 
 ##### Demo
 
-<img src="README.assets/videoLen.gif" alt="videoLen" width="600" style="zoom:100%;" />
+<img src="README.assets/videoLen.gif" alt="videoLen" width="600" />
 
 ##### Installation
 
@@ -72,11 +72,11 @@ progress <dir of videos> --begin G --end gle --char o --length 60
 
 ##### Demo
 
-<img src="README.assets/google-demo.gif" alt="google-demo" width="600" style="zoom:100%;" />
+<img src="README.assets/google-demo.gif" alt="google-demo" width="600" />
 
-<img src="README.assets/default.gif" alt="default" width="600" style="zoom:100%;" />
+<img src="README.assets/default.gif" alt="default" width="600" />
 
-<img src="README.assets/videoLen.gif" alt="videoLen" width="600" style="zoom:100%;" />
+<img src="README.assets/videoLen.gif" alt="videoLen" width="600" />
 
 ##### man
 
