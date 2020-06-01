@@ -1,0 +1,9 @@
+#!/bin/bash
+install_dirname="install_videoLen_$RANDOM"
+mkdir $install_dirname
+cd $install_dirname
+wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/bin/videoLen
+sudo mv ./videoLen /usr/bin
+cd ..
+rmdir $install_dirname
+echo done

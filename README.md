@@ -23,6 +23,18 @@ videoLen --dir <directory of videos> --quiet --default
 videoLen --dir <directory of videos> --quiet mp4 mov
 ```
 
+##### Installation
+
+[install.videoLen.sh](../installation/install.videoLen.sh)
+
+##### Uninstallation
+
+[uninstall.videoLen.sh](../installation/uninstall.videoLen.sh)
+
+
+
+
+
 #### [progress](./bin/progress):
 
 - Display a progress bar
@@ -46,8 +58,17 @@ progress <dir of videos> --begin G --end gle --char o --length 60
 
 ##### man
 
-[man page](./man/progress.1):
-[man page .gz](./man/progress.1.gz):
+[man page](./man/progress.1)
+
+[man page .gz](./man/progress.1.gz)
+
+##### Installation
+
+[install.progress.sh](./installation/install.progress.sh)
+
+##### Uninstallation
+
+[uninstall.progress.sh](./installation/uninstall.progress.sh)
 
 ## Settings
 
