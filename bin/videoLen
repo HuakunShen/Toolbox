@@ -53,14 +53,21 @@ searchCmd="find ${videoDir} ${findVideoTypePattern}"
 
 output=$(find $videoDir $findVideoTypePattern)
 sum=0
+outputArr=($output)
+outputLen=${#outputArr[@]}
+
+count=1
 for file in $output
 do
     if [ -z $quiet ]
     then
         echo $file
     fi
+    progress $count $outputLen
+
     duration=$(ffprobe -v quiet -of csv=p=0 -show_entries format=duration $file)
     sum=`echo $sum + $duration | bc`
+    ((count++))
 done
 echo $sum seconds
 sum=${sum%.*}

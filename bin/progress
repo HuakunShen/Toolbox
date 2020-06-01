@@ -1,0 +1,90 @@
+#!/bin/bash
+# constants
+BEGIN='['
+END=']'
+CHAR='#'
+LENGTH=50
+
+function prog {
+    numHash=$(echo "scale=3; $1/100*$LENGTH" | bc)
+    numHash="${numHash%.*}"
+    progress_bar=$BEGIN
+    for i in `seq 1 $LENGTH`
+    do
+        if (( i <= numHash ))
+        then
+            progress_bar+="$CHAR"
+        else
+            progress_bar+="_"
+        fi
+    done
+    progress_bar+="$END($1%)"
+    echo -ne "$progress_bar\r"
+}
+# parse arguments
+arguments=()
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+    case $key in
+        --demo)
+            demo=true
+            shift
+        ;;
+        --begin)
+            BEGIN="$2"
+            shift # past argument
+            shift # past value
+        ;;
+        --end)
+            END="$2"
+            shift # past argument
+            shift # past value
+        ;;
+        --char)
+            CHAR="$2"
+            shift # past argument
+            shift # past value
+        ;;
+        --length)
+            LENGTH="$2"
+            shift # past argument
+            shift # past value
+        ;;
+        *)    # the rest options: video types 
+            arguments+=("$1") # save it in an array for later
+            shift # past argument
+        ;;
+    esac
+done
+
+set -- "${arguments[@]}" # restore positional parameters
+
+# demo
+if [ "$demo" == "true" ]
+then
+    for i in `seq 1 100`
+    do
+        prog $i
+    done
+    echo -ne "\n"
+    exit
+fi
+
+# first argument is done so far
+# second argument is total
+# third argument is progress bar length
+if [ $# -lt 2 ]
+then
+    echo "Missing Argument, Usage: progress <done> <total> <optional:progress_bar_length>"
+    exit
+fi
+
+prog_number=$(echo "scale=2; $1/$2*100" | bc)
+prog_number="${prog_number%.*}"
+
+prog $prog_number
+if [ $prog_number -eq 100 ]
+then
+    echo -ne "\n"
+fi
