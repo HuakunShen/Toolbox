@@ -66,6 +66,12 @@ progress --begin G --end gle --char o --length 10 --demo
 progress <dir of videos> --begin G --end gle --char o --length 60
 ```
 
+##### Demo
+
+![default-demo](README.assets/default-demo.gif)
+
+![google-demo](README.assets/google-demo.gif)
+
 ##### man
 
 [man page](./man/progress.1)
