@@ -48,5 +48,14 @@ function search {
 }
 alias search='search'
 
+function ff {
+    find . -name $1
+}
+function ffi {
+    find . -iname $1   
+}
+
+alias ff='ff'
+alias ffi='ffi'
 
 alias PATH="echo $PATH | tr ':' '\n'"
