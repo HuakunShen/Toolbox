@@ -30,7 +30,9 @@ function mcd {
 }
 alias mcd='mcd'
 
+# Shortcut for "grep -Rn <keyword>"
 # search in all files in dir
+# search for keyword in files and return filenames containing the keyword
 function search {
     # $1 is search content
     # $2 is target directory
@@ -48,6 +50,8 @@ function search {
 }
 alias search='search'
 
+# Shortcut for find command
+# Function: find a file by keyword recursively
 function ff {
     find . -name $1
 }
