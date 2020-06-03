@@ -23,6 +23,10 @@ videoLen --dir <directory of videos> --quiet --default
 videoLen --dir <directory of videos> --quiet mp4 mov
 ```
 
+##### Demo
+
+<img src="README.assets/videoLen.gif" alt="videoLen" width="600" />
+
 ##### Installation
 
 [install.videoLen.sh](./installation/install.videoLen.sh)
@@ -65,6 +69,14 @@ progress --begin G --end gle --char o --length 10 --demo
 # Goooooooooogle(100%)
 progress <dir of videos> --begin G --end gle --char o --length 60
 ```
+
+##### Demo
+
+<img src="README.assets/google-demo.gif" alt="google-demo" width="600" />
+
+<img src="README.assets/default.gif" alt="default" width="600" />
+
+<img src="README.assets/videoLen.gif" alt="videoLen" width="600" />
 
 ##### man
 
@@ -140,7 +152,8 @@ cat bashrc.sh >> ~/.bashrc
 rm bashrc.sh
 ```
 
-[`crontab template`](./setting/crontab.sh):
+[crontab template](./setting/crontab.sh):
 
 - crontab is for periodic tasks
 - Contains contab template
+- `crontab -e` to edit

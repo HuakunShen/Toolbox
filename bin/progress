@@ -29,12 +29,8 @@ do
     key="$1"
     case $key in
         -d|--demo)
-            for i in `seq 1 100`
-            do
-                prog $i
-            done
-            echo -ne "\n"
-            exit
+            demo=true
+            shift
         ;;
         -h|--help)
             echo "Usage:"
@@ -75,6 +71,16 @@ do
     esac
 done
 
+# demo
+if [ "$demo" == "true" ]
+then
+    for i in `seq 1 100`
+    do
+        prog $i
+    done
+    echo -ne "\n"
+    exit
+fi
 set -- "${arguments[@]}" # restore positional parameters
 
 # first argument is job done so far
