@@ -62,4 +62,23 @@ function ffi {
 alias ff='ff'
 alias ffi='ffi'
 
+
+# only for WSL
+# enter win address and translate then cd into the corresponding linux address
+# e.g.
+# cdwin C:\A\B = cd /mnt/c/A/B
+function cdwin {
+    path=$1
+    tmpPath=$(echo $path | sed 's/\\/\//g')
+    echo $tmpPath
+    disk=$(echo $tmpPath | cut -d ':' -f 1 | awk '{print tolower($0)}')
+    tmpPath=$(echo $tmpPath | cut -d ':' -f 2)
+    path="/mnt/$disk$tmpPath"
+    cd $path
+}
+alias cdwin='cdwin'
+
+
 alias PATH="echo $PATH | tr ':' '\n'"
+
+
