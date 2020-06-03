@@ -94,6 +94,21 @@ chmod a+x uninstall.progress.sh
 rm ./uninstall.progress.sh
 ```
 
+#### [imgToHtml](./bin/imgToHtml)
+
+- Put a list of image into an html for a simple list view, instead of opening every image one by one.
+
+**Example**
+
+```bash
+imgToHtml 		# put all png in cwd into an html
+imgToHtml jpg 	# put all jpg in cwd into an html
+```
+
+
+
+
+
 ## Settings
 
 ### [.zshrc](./setting/zshrc.sh):
