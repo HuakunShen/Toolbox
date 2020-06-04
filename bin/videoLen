@@ -74,7 +74,6 @@ do
         echo $file
     fi
     progress $count $outputLen
-    echo -ne '\n'
     duration=$(ffprobe -v quiet -of csv=p=0 -show_entries format=duration $file)
     sum=`echo $sum + $duration | bc`
     ((count++))
