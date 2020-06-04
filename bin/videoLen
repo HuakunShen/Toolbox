@@ -47,23 +47,25 @@ fi
 # set "find" search string
 findVideoTypePattern=""
 i=0
+videoTypeArr=()
 for type in ${videoTypes[@]}
 do
+    videoTypeArr+=("-iname")
+    videoTypeArr+=("*.$type")
     findVideoTypePattern+=" -iname *.$type"
     if [ $((i+1)) -ne ${#videoTypes[@]} ]
     then
         findVideoTypePattern+=' -o'
+        videoTypeArr+=("-o")
     fi
     ((i++))
 done
 
-searchCmd="find ${videoDir} ${findVideoTypePattern}"
-
-output=$(find $videoDir $findVideoTypePattern)
 sum=0
-outputArr=($output)
-outputLen=${#outputArr[@]}
 
+output=$(find "$videoDir" "${videoTypeArr[@]}")
+outputLen=$(echo $output | tr " " "\n" | wc -l)
+echo "Length: $outputLen"
 count=1
 for file in $output
 do
@@ -72,7 +74,8 @@ do
         echo $file
     fi
     progress $count $outputLen
-
+    echo $count $outputLen
+    echo '\n'
     duration=$(ffprobe -v quiet -of csv=p=0 -show_entries format=duration $file)
     sum=`echo $sum + $duration | bc`
     ((count++))
