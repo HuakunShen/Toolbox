@@ -74,13 +74,13 @@ do
         echo $file
     fi
     progress $count $outputLen
-    echo $count $outputLen
-    echo '\n'
+    echo -ne '\n'
     duration=$(ffprobe -v quiet -of csv=p=0 -show_entries format=duration $file)
     sum=`echo $sum + $duration | bc`
     ((count++))
 done
-echo $sum seconds
+echo "All $(echo ${videoTypes[@]}|tr " " ', ') videos have a total duration of"
+echo "$sum seconds"
 sum=${sum%.*}
 if [ $sum -gt 60 ]
 then
