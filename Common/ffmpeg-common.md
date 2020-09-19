@@ -13,4 +13,4 @@
 ### Examples
 
 - [h264 to mp4](https://trac.ffmpeg.org/wiki/Encode/H.264)
-  - `ffmpeg -i video.h264.mp4 -c:v libx264 -r 15 -preset ultrafast -crf 0 output.mp4`
+  - `ffmpeg -i video.h264 -c:v libx264 -r 15 -preset ultrafast -crf 0 output.mp4`
