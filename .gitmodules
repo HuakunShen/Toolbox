@@ -1,0 +1,3 @@
+[submodule "wol"]
+	path = wol
+	url = https://github.com/HuakunShen/wol
