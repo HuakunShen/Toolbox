@@ -32,10 +32,9 @@ videoLen --dir <directory of videos> --quiet mp4 mov
 [install.videoLen.sh](./installation/install.videoLen.sh)
 
 ```bash
-wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.videoLen.sh
-chmod a+x install.videoLen.sh
-./install.videoLen.sh
-rm ./install.videoLen.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.videoLen.sh)"
+# or
+sh -c "$(wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.videoLen.sh -O -)"
 ```
 
 ##### Uninstallation
@@ -43,10 +42,7 @@ rm ./install.videoLen.sh
 [uninstall.videoLen.sh](./installation/uninstall.videoLen.sh)
 
 ```bash
-wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/uninstall.videoLen.sh
-chmod a+x uninstall.videoLen.sh
-./uninstall.videoLen.sh
-rm ./uninstall.videoLen.sh
+sudo rm /usr/local/bin/videoLen
 ```
 
 #### [progress](./bin/progress):
@@ -89,10 +85,9 @@ progress <dir of videos> --begin G --end gle --char o --length 60
 [install.progress.sh](./installation/install.progress.sh)
 
 ```bash
-wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.progress.sh
-chmod a+x install.progress.sh
-./install.progress.sh
-rm ./install.progress.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.progress.sh)"
+# or
+sh -c "$(wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/install.progress.sh -O -)"
 ```
 
 ##### Uninstallation
@@ -100,10 +95,8 @@ rm ./install.progress.sh
 [uninstall.progress.sh](./installation/uninstall.progress.sh)
 
 ```bash
-wget https://raw.githubusercontent.com/HuakunShen/Toolbox/master/installation/uninstall.progress.sh
-chmod a+x uninstall.progress.sh
-./uninstall.progress.sh
-rm ./uninstall.progress.sh
+sudo rm /usr/share/man/man1/progress.1.gz
+sudo rm /usr/local/bin/progress
 ```
 
 #### [imgToHtml](./bin/imgToHtml)
