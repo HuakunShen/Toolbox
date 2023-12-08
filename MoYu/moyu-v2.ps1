@@ -77,7 +77,6 @@ $form.Controls.Add($delayTextBox)
 
 $form.Topmost = $true
 
-$form.Add_Shown({$textBox.Select()})
 $result = $form.ShowDialog()
 
 if ($result -ne [System.Windows.Forms.DialogResult]::OK) {
